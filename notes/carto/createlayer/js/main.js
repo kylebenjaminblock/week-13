@@ -37,7 +37,7 @@ var districts = cartodb.createLayer(map, {
     });
     // Add button click events, demo setCartoCSS and setSQL
     $('#style1').click(function() {
-      layer.getSubLayer(0).setCartoCSS('#pacd_2011 { line-width: 3; line-color: #000; }');
+      layer.getSubLayer(0).setCartoCSS('#pacd_2011 { line-width: 5; line-color: #000; }');
     });
     $('#style2').click(function() {
       layer.getSubLayer(0).setCartoCSS('#pacd_2011 { line-width: 1; line-color: #0B645E; }');
