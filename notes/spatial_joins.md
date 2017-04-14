@@ -7,7 +7,7 @@ are the most commonly used spatial predicates and what they mean.(Short
 descriptions sourced from: http://revenant.ca/www/postgis/workshop/basic_exercises.html)
 
 [ST_Contains(A,B)](http://postgis.org/docs/ST_Contains.html) —
-Returns true if and only if no points of B lie in the exterior of A, and at 
+Returns true if and only if no points of B lie in the exterior of A, and at
 least one point of the interior of B lies in the interior of A.
 
 [ST_ContainsProperly(A,B)](http://postgis.org/docs/ST_ContainsProperly.html) —
@@ -41,5 +41,6 @@ don’t overlap, otherwise false.
 Returns true if A is completely inside B, otherwise false.
 
 [ST_DWithin(A,B,D)](http://postgis.org/docs/ST_DWithin.html) —
-Returns true if B is within distance D of A.
+Returns true if B is within distance D of A. See the note on [`ST_Buffer`
+vs `ST_DWithin`](./buffer_vs_dwithin.md)
 
