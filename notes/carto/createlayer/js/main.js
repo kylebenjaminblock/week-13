@@ -31,10 +31,25 @@ var districts = cartodb.createLayer(map, {
   .on('done', function(layer) {
     // Set interactivity
     layer.setInteraction(true);
-    // Set up event
+    // Set up map interaction event
     layer.on('featureClick',function(e, latlng, pos, data) {
       console.log(data);
+    });
+    // Add button click events, demo setCartoCSS and setSQL
+    $('#style1').click(function() {
+      layer.getSubLayer(0).setCartoCSS('#pacd_2011 { line-width: 5; line-color: #000; }');
+    });
+    $('#style2').click(function() {
+      layer.getSubLayer(0).setCartoCSS('#pacd_2011 { line-width: 1; line-color: #0B645E; }');
+    });
+    $('#sql1').click(function() {
+      layer.getSubLayer(0).setSQL('SELECT the_geom, district_number, the_geom_webmercator FROM pacd_2011');
+    });
+    $('#sql2').click(function() {
+      layer.getSubLayer(0).setSQL('SELECT the_geom, district_number, the_geom_webmercator FROM pacd_2011 WHERE district_number = 5');
     });
   }).on('error', function() {
     console.log("some error occurred");
 });
+
+
