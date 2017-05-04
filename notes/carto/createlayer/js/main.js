@@ -51,5 +51,3 @@ var districts = cartodb.createLayer(map, {
   }).on('error', function() {
     console.log("some error occurred");
 });
-
-
